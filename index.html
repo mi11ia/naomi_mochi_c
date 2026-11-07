@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Naomi 和 Mochi</title>
+<meta name="theme-color" content="#cfe3ee">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Naomi 和 Mochi">
+<link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAFcUlEQVR4nO3dPWheVRyA8UaKIkpwqApSDIk4WMWlgoODjQqRIHQoCGoqVJ2kaKmLdbGbm9YPOghVsKIgZBCkGNBGBwctISr4AaKhBBykBKmIVMQ4OJ1/4B6O537F5/lth/dt3nMpD/fce8+bTKyub2zukKAuG3oC0pAMQGgGIDQDEJoBCM0AhGYAQjMAoRmA0AxAaAYgNAMQmgEIzQCEZgBCMwChGYDQDEBoBiA0AxCaAQjNAIRmAEIzAKEZgNAMQGgGIDQDEJoBCM0AhGYAQjMAoRmA0AxAaAYgNAMQmgEIzQCEZgBCMwChGYDQDEBoBiA0AxCaAQjNAIRmAEIzAKEZgNAMQGgGIDQDEJoBCM0AhGYAQjMAoRmA0AxAaAYgNAMQmgEIzQCEZgBCMwChGYDQDEBoBiA0AxCaAQjNAIRmAEIzAKEZgNAMQGgGIDQDEJoBCM0AhGYAQjMAoRmA0AxAaAYgNAMQmgEIzQCEZgBCMwChGYDQDEBoBiA0AxCaAQht59ATeOr+O5PxKx9+PtBM2tH28Rx+8EAyfu29xaqfN7SxHY9nAKEZgNAMQGgTq+sbm31+YFwjT+2aTMbnL1xMxmO/Jmj7eOIaeXb2vmS8vPxRMh56DZ0z9uPxDCA0AxCaAQht8OcA0bvPHU/GD43sOUFc88f5Pvv6i51+/htHDifjx0Z2Xz2u+eN8T3/1fZ/TyfIMIDQDEJoBCG101wBxDR3vq8c1eN/ifLpe80dxDR3vq8c1eN/ifMa25o88AwjNAIRmAELrfC9Qbq9MrTeXlhtfPzQ32+m/LxX3Bv09uTsZxzX0zPRU0c/fc8vN/21iLfn2ux+K3v/T2vlk3PfeIM8AQjMAoRmA0Eb3HODi3MuNr79/7K5k/Nel3xrfn1vjtz2fg/vuqPq83Jr/0BOPJOOFE18m44/Ppe+/9+pvquaTE+fz6rnLG98f5xOPd7nuv6uYZwChGYDQDEBoo7sGyNn/wmfJePHo7QPN5F9xPu0+5dgqrvmHNrb5lPIMIDQDEJoBCK34GiC3H7/2O7uTS08n49r7+D+ffLvx9RueXGh8PXeN0fZeodxenj07/kzGtXtv1tZ+bHz/9PRNyTjet889Z9h6PHV7lXLfdyjdO+QZQGgGIDQDEFr2GqB0P3/td3Zr1/zRwqmXGl8/m7kGyInzbfuaICpd80dxv338/kHu/TPTjxd9Xpxv6fcVcr9bNPf+3DWBZwChGYDQDEBog+8FanvNH51dWen050e11wS33Xpjm9PZ4pNPzxS9//njR5PxyhdfV31+18dXyjOA0AxAaAYgtM6vAeLeoPic4MiBBxr//YnFD1qfU5ty8y/9G2Fz8+l97NNvnUrG111/bTredWVuiolLv/9a9P6odA3/y4U/GscHH02fK8T79l3/rlPPAEIzAKEZgNAGfw6gMqVr/qHF+cZrgKF5BhCaAQjNAISWvQbI3ceP3w+o/ZteY7/vH8X55p4LlNpua/6c3PGU7v+v/XsCngGEZgBCMwChFT8HKL0myNlua/6ceDz37N070Ez+n9r+G2KeAYRmAEIzAKG5F2jkrrjqmsbXa/f3dy03/6F5BhCaAQjNAIS27a4B4n31rn/vT9+fVyqusffdPZ+Ml8680+nnz80/nIxLf+/Q0DwDCM0AhGYAQptYXd/YrPkBpfv9c3uJSv993/qeb+nvxandG1Ordr59H69nAKEZgNAMQGgTJ5/ZX3UNIG1nngGEZgBC2zkztXvoOUiD8QwgNAMQmgEIzQCEZgBCMwChGYDQDEBoBiA0AxCaAQjNAIRmAEIzAKEZgNAMQGgGIDQDEJoBCM0AhGYAQjMAoRmA0AxAaAYgNAMQ2j+1QCoWiLFXkAAAAABJRU5ErkJggg==">
+<link rel="apple-touch-icon" sizes="192x192" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAFcUlEQVR4nO3dPWheVRyA8UaKIkpwqApSDIk4WMWlgoODjQqRIHQoCGoqVJ2kaKmLdbGbm9YPOghVsKIgZBCkGNBGBwctISr4AaKhBBykBKmIVMQ4OJ1/4B6O537F5/lth/dt3nMpD/fce8+bTKyub2zukKAuG3oC0pAMQGgGIDQDEJoBCM0AhGYAQjMAoRmA0AxAaAYgNAMQmgEIzQCEZgBCMwChGYDQDEBoBiA0AxCaAQjNAIRmAEIzAKEZgNAMQGgGIDQDEJoBCM0AhGYAQjMAoRmA0AxAaAYgNAMQmgEIzQCEZgBCMwChGYDQDEBoBiA0AxCaAQjNAIRmAEIzAKEZgNAMQGgGIDQDEJoBCM0AhGYAQjMAoRmA0AxAaAYgNAMQmgEIzQCEZgBCMwChGYDQDEBoBiA0AxCaAQjNAIRmAEIzAKEZgNAMQGgGIDQDEJoBCM0AhGYAQjMAoRmA0AxAaAYgNAMQmgEIzQCEZgBCMwChGYDQDEBoBiA0AxCaAQht59ATeOr+O5PxKx9+PtBM2tH28Rx+8EAyfu29xaqfN7SxHY9nAKEZgNAMQGgTq+sbm31+YFwjT+2aTMbnL1xMxmO/Jmj7eOIaeXb2vmS8vPxRMh56DZ0z9uPxDCA0AxCaAQht8OcA0bvPHU/GD43sOUFc88f5Pvv6i51+/htHDifjx0Z2Xz2u+eN8T3/1fZ/TyfIMIDQDEJoBCG101wBxDR3vq8c1eN/ifLpe80dxDR3vq8c1eN/ifMa25o88AwjNAIRmAELrfC9Qbq9MrTeXlhtfPzQ32+m/LxX3Bv09uTsZxzX0zPRU0c/fc8vN/21iLfn2ux+K3v/T2vlk3PfeIM8AQjMAoRmA0Eb3HODi3MuNr79/7K5k/Nel3xrfn1vjtz2fg/vuqPq83Jr/0BOPJOOFE18m44/Ppe+/9+pvquaTE+fz6rnLG98f5xOPd7nuv6uYZwChGYDQDEBoo7sGyNn/wmfJePHo7QPN5F9xPu0+5dgqrvmHNrb5lPIMIDQDEJoBCK34GiC3H7/2O7uTS08n49r7+D+ffLvx9RueXGh8PXeN0fZeodxenj07/kzGtXtv1tZ+bHz/9PRNyTjet889Z9h6PHV7lXLfdyjdO+QZQGgGIDQDEFr2GqB0P3/td3Zr1/zRwqmXGl8/m7kGyInzbfuaICpd80dxv338/kHu/TPTjxd9Xpxv6fcVcr9bNPf+3DWBZwChGYDQDEBog+8FanvNH51dWen050e11wS33Xpjm9PZ4pNPzxS9//njR5PxyhdfV31+18dXyjOA0AxAaAYgtM6vAeLeoPic4MiBBxr//YnFD1qfU5ty8y/9G2Fz8+l97NNvnUrG111/bTredWVuiolLv/9a9P6odA3/y4U/GscHH02fK8T79l3/rlPPAEIzAKEZgNAGfw6gMqVr/qHF+cZrgKF5BhCaAQjNAISWvQbI3ceP3w+o/ZteY7/vH8X55p4LlNpua/6c3PGU7v+v/XsCngGEZgBCMwChFT8HKL0myNlua/6ceDz37N070Ez+n9r+G2KeAYRmAEIzAKG5F2jkrrjqmsbXa/f3dy03/6F5BhCaAQjNAIS27a4B4n31rn/vT9+fVyqusffdPZ+Ml8680+nnz80/nIxLf+/Q0DwDCM0AhGYAQptYXd/YrPkBpfv9c3uJSv993/qeb+nvxandG1Ordr59H69nAKEZgNAMQGgTJ5/ZX3UNIG1nngGEZgBC2zkztXvoOUiD8QwgNAMQmgEIzQCEZgBCMwChGYDQDEBoBiA0AxCaAQjNAIRmAEIzAKEZgNAMQGgGIDQDEJoBCM0AhGYAQjMAoRmA0AxAaAYgNAMQ2j+1QCoWiLFXkAAAAABJRU5ErkJggg==">
+<style>
+  :root {
+    --ink: #3f2d27;
+    --ink-soft: #7a6a60;
+    --ink-faint: #a3958a;
+    --cream: #f5e8d2;
+    --seal: #5c3f33;
+    --seal-deep: #45302a;
+    --blue: #4e86c4;
+    --grey: #7c7a85;
+    --panel: #efe9df;
+    --track: #dcd2c3;
+    --wood: #b8926b;
+    --wood-edge: #96734f;
+    --sky: #cfe3ee;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--panel); }
+  body {
+    color: var(--ink);
+    font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Microsoft YaHei", system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+  }
+  .app { max-width: 430px; margin: 0 auto; min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
+
+  /* ---------- scene ---------- */
+  .scene {
+    position: relative;
+    height: 270px;
+    background: var(--sky);
+    overflow: hidden;
+    transition: background-color 1.2s ease;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .scene.dawn    { --sky: #f0d8c4; }
+  .scene.day     { --sky: #cfe3ee; }
+  .scene.evening { --sky: #f1cbae; }
+  .scene.dusk    { --sky: #7b88aa; }
+  .scene.night   { --sky: #2b3550; }
+  .moon {
+    position: absolute; top: 20px; right: 24px;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: #f1e6c8;
+    box-shadow: -9px -3px 0 3px var(--sky);
+    display: none;
+  }
+  .scene.night .moon { display: block; }
+  .sill {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 28px;
+    background: var(--wood);
+    border-top: 3px solid var(--wood-edge);
+  }
+  .cats {
+    position: absolute; left: 0; right: 0; bottom: 26px;
+    display: flex; justify-content: center; align-items: flex-end;
+  }
+  .stage { position: relative; }
+  .stage canvas {
+    display: block;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    touch-action: manipulation;
+    cursor: pointer;
+    outline: none;
+    border-radius: 6px;
+  }
+  .stage canvas:focus-visible { box-shadow: 0 0 0 3px var(--blue); }
+  .stage.jump canvas { animation: jump .55s ease-out; }
+  .stage.hop canvas { animation: hop .4s ease-out; }
+  @keyframes jump {
+    0% { transform: translateY(0); }
+    35% { transform: translateY(-34px); }
+    70% { transform: translateY(0); }
+    85% { transform: translateY(-9px); }
+    100% { transform: translateY(0); }
+  }
+  @keyframes hop {
+    0% { transform: translateY(0); }
+    40% { transform: translateY(-7px); }
+    100% { transform: translateY(0); }
+  }
+
+  .bubble {
+    position: absolute; bottom: calc(100% + 6px); left: 50%;
+    transform: translateX(-50%);
+    width: max-content; max-width: 176px;
+    background: #fffdf8;
+    color: var(--ink);
+    border: 2px solid var(--ink);
+    box-shadow: 3px 3px 0 var(--ink);
+    padding: 5px 10px;
+    font-size: 14px; line-height: 1.4;
+    text-align: center;
+    z-index: 2;
+  }
+  .bubble::after {
+    content: ""; position: absolute; left: 50%; bottom: -7px;
+    width: 8px; height: 8px; margin-left: -4px;
+    background: #fffdf8;
+    border-right: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    transform: rotate(45deg);
+  }
+  .bubble[hidden] { display: none; }
+
+  .zz {
+    position: absolute; top: -6px; left: 62%;
+    font-size: 19px; font-weight: 700; color: var(--cream);
+    text-shadow: 1px 1px 0 var(--ink);
+    pointer-events: none;
+  }
+  .zz[hidden] { display: none; }
+  .zz span { display: inline-block; animation: drift 2.4s ease-in-out infinite; }
+  .zz span:nth-child(2) { animation-delay: .8s; font-size: 14px; }
+  .zz span:nth-child(3) { animation-delay: 1.6s; font-size: 11px; }
+  @keyframes drift {
+    0% { opacity: 0; transform: translate(0, 0); }
+    20% { opacity: 1; }
+    100% { opacity: 0; transform: translate(12px, -28px); }
+  }
+  .scene.night .zz { color: #f1e6c8; }
+
+  .heart {
+    position: absolute;
+    font-size: 18px; color: #d4808b;
+    text-shadow: 1px 1px 0 var(--ink);
+    pointer-events: none;
+    z-index: 3;
+    animation: rise 1.1s ease-out forwards;
+  }
+  @keyframes rise {
+    0% { opacity: 0; transform: translate(0, 0) scale(.6); }
+    15% { opacity: 1; transform: translate(0, -6px) scale(1); }
+    100% { opacity: 0; transform: translate(var(--dx, 0), -64px) scale(1); }
+  }
+
+  /* ---------- panel ---------- */
+  .panel { padding: 18px 20px 22px; flex: 1; }
+  .head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .title { font-size: 21px; font-weight: 600; letter-spacing: .02em; }
+  .days { font-size: 13px; color: var(--ink-soft); white-space: nowrap; }
+  .since { font-size: 13px; color: var(--ink-soft); margin: 2px 0 16px; }
+
+  .stats { display: grid; gap: 10px; margin-bottom: 18px; }
+  .stat { display: grid; grid-template-columns: 6em 1fr 2.4em; align-items: center; gap: 10px; font-size: 14px; }
+  .stat .val { text-align: right; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+  .bar { height: 10px; background: var(--track); border-radius: 5px; overflow: hidden; }
+  .bar i { display: block; height: 100%; width: 0; border-radius: 5px; transition: width .4s ease; }
+  #barFull { background: var(--wood-edge); }
+  #barNaomi { background: var(--seal); }
+  #barMochi { background: var(--grey); }
+
+  .actions { display: flex; gap: 10px; }
+  .actions button {
+    flex: 1; height: 50px;
+    font: inherit; font-size: 16px; font-weight: 500;
+    border: 0; border-radius: 12px;
+    background: var(--seal); color: var(--cream);
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+  .actions button:active { background: var(--seal-deep); transform: translateY(1px); }
+  .actions button:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+  .records { display: flex; gap: 10px; margin-top: 10px; }
+  .records button {
+    flex: 1; height: 42px;
+    font: inherit; font-size: 14px;
+    border: 2px solid var(--track); border-radius: 12px;
+    background: transparent; color: var(--ink-soft);
+    cursor: pointer; touch-action: manipulation;
+  }
+  .records button:active { background: var(--track); }
+  .records button:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+  .foot { margin-top: 20px; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 12px; color: var(--ink-faint); }
+  .link {
+    background: none; border: 0; padding: 0; font: inherit; font-size: 12px;
+    color: var(--ink-faint); text-decoration: underline; text-decoration-style: dotted; cursor: pointer;
+    white-space: nowrap;
+  }
+  .link.armed { color: #b5563f; }
+  #note { text-align: right; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stage.jump canvas, .stage.hop canvas { animation: none; }
+    .heart { animation-duration: .01s; }
+    .zz span { animation: none; opacity: 1; }
+  }
+</style>
+</head>
+<body>
+<main class="app">
+  <section class="scene day" id="scene" aria-label="窗台">
+    <div class="moon"></div>
+    <div class="cats" id="cats">
+      <div class="stage" id="stage-naomi">
+        <div class="bubble" id="bubble-naomi" hidden role="status"></div>
+        <div class="zz" id="zz-naomi" hidden aria-hidden="true"><span>z</span><span>z</span><span>z</span></div>
+        <canvas id="cat-naomi" tabindex="0" role="button" aria-label="摸摸 Naomi"></canvas>
+      </div>
+      <div class="stage" id="stage-mochi">
+        <div class="bubble" id="bubble-mochi" hidden role="status"></div>
+        <div class="zz" id="zz-mochi" hidden aria-hidden="true"><span>z</span><span>z</span><span>z</span></div>
+        <canvas id="cat-mochi" tabindex="0" role="button" aria-label="摸摸 Mochi"></canvas>
+      </div>
+    </div>
+    <div class="sill"></div>
+  </section>
+
+  <section class="panel">
+    <div class="head">
+      <div class="title">Naomi 和 Mochi</div>
+      <div class="days" id="days"></div>
+    </div>
+    <div class="since" id="since"></div>
+
+    <div class="stats">
+      <div class="stat"><span>饱腹</span><div class="bar"><i id="barFull"></i></div><span class="val" id="valFull">–</span></div>
+      <div class="stat"><span>Naomi 心情</span><div class="bar"><i id="barNaomi"></i></div><span class="val" id="valNaomi">–</span></div>
+      <div class="stat"><span>Mochi 心情</span><div class="bar"><i id="barMochi"></i></div><span class="val" id="valMochi">–</span></div>
+    </div>
+
+    <div class="actions">
+      <button id="feed" type="button">开饭</button>
+      <button id="play" type="button">逗猫</button>
+    </div>
+
+    <div class="records">
+      <button id="exportBtn" type="button">保存记录</button>
+      <button id="importBtn" type="button">读取记录</button>
+      <input id="importFile" type="file" accept=".json,application/json" hidden>
+    </div>
+
+    <div class="foot">
+      <button class="link" id="reset" type="button">重新开始</button>
+      <span id="note"></span>
+    </div>
+  </section>
+</main>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- sprites ---------- */
+  const W = 22, H = 18;
+  const SPRITES = {
+    naomi: [
+      "......................",
+      "..k............k......",
+      ".kbk..........kbk.....",
+      ".kbik........kibk.....",
+      ".kbbbkkkkkkkkbbbk.....",
+      "kbbbbbWWbbWWbbbbbk....",
+      "kbbbbbWWWWWWbbbbbk....",
+      "kbbbbbWWWWWWbbbbbk....",
+      "kbbbWWWWppWWWWbbbk....",
+      "kbbWWWWWkkWWWWWbbk....",
+      "kbWWWWWWWWWWWWWWbk....",
+      ".kssWWWWWWWWWWssk.....",
+      ".kssWWWWWWWWWWssk.....",
+      ".ksWWWWWWWWWWWWsk.....",
+      ".kWWWWWWWWWWWWWWk.....",
+      ".kWWWWWWWWWWWWWWk.....",
+      ".kWWWkWWWWWWkWWWk.....",
+      "..kkk........kkk......"
+    ],
+    mochi: [
+      "......................",
+      "..k............k......",
+      ".kbk..........kbk.....",
+      ".kbik........kibk.....",
+      ".kbbbkkkkkkkkbbbk.....",
+      "kbmmmllllllllmmmbk....",
+      "kmmmmmmmmmmmmmmmmk....",
+      "kmmmmmmmmmmmmmmmmk....",
+      "klllmmmbppbmmmlllk....",
+      "kllmmmmkbbkmmmmllk....",
+      "kccllllWWWWllllcck....",
+      ".kssccccccccccssk.....",
+      ".ksccccccccccccsk.....",
+      ".kcccccccccccccck.....",
+      ".kcccccccccccccck.....",
+      ".kWWccccccccccWWk.....",
+      ".kWWWkcccccckWWWk.....",
+      "..kkk........kkk......"
+    ]
+  };
+  const PAL = {
+    naomi: { k: '#3d2b25', b: '#5c3f33', s: '#6b4b3e', W: '#fbf8f2', c: '#fbf8f2', i: '#e4a5a5', e: '#4e86c4', w: '#ffffff', p: '#e18e96', m: '#5c3f33', l: '#5c3f33' },
+    mochi: { k: '#3b3941', b: '#7c7a85', m: '#9e9ba4', l: '#c8c4c9', s: '#dedbde', c: '#f4efe7', W: '#fbfaf7', i: '#d9a9ad', e: '#5b8fcf', w: '#ffffff', p: '#5b5962' }
+  };
+  const EARS_DOWN = [[2, 0, '.kk............kk.'], [3, 0, '.kbbk.........kbbk']];
+  const EYES = {
+    open:  [['wee', 'wee'], ['eee', 'eee']],
+    blink: [['...', '...'], ['kkk', 'kkk']],
+    happy: [['kkk', 'kkk'], ['k.k', 'k.k']],
+    sad:   [['kkk', 'kkk'], ['eee', 'eee']]
+  };
+  const TAILS = {
+    a: [[8, 19, 'kk'], [9, 18, 'kbbk'], [10, 18, 'kbbk'], [11, 18, 'kbbk'], [12, 18, 'kbbk'], [13, 17, 'kbbk'], [14, 17, 'kbk'], [15, 17, 'kbk'], [16, 17, 'kbk'], [17, 17, 'kkk']],
+    b: [[10, 19, 'kk'], [11, 18, 'kbbk'], [12, 18, 'kbbk'], [13, 17, 'kbbk'], [14, 17, 'kbk'], [15, 17, 'kbk'], [16, 17, 'kbk'], [17, 17, 'kkk']]
+  };
+  function put(g, r, c, s) { for (let i = 0; i < s.length; i++) if (s[i] !== '.') g[r][c + i] = s[i]; }
+  function frame(base, ear, eye, tail) {
+    const g = base.map(r => r.split(''));
+    if (ear === 'down') {
+      for (let r = 1; r <= 3; r++) for (let c = 0; c < 18; c++) g[r][c] = '.';
+      EARS_DOWN.forEach(p => put(g, p[0], p[1], p[2]));
+    }
+    const e = EYES[eye];
+    put(g, 6, 3, e[0][0]); put(g, 6, 12, e[0][1]);
+    put(g, 7, 3, e[1][0]); put(g, 7, 12, e[1][1]);
+    TAILS[tail].forEach(p => put(g, p[0], p[1], p[2]));
+    return g;
+  }
+
+  /* ---------- lines ---------- */
+  const LINES = {
+    naomi: {
+      idle:   ['……', '太阳在那边。', '喵。', '再躺一会儿。', '不着急。', '你回来了。', '那边暖和。', '嗯。'],
+      pet:    ['嗯。', '可以。', '……继续。', '这里好。', '慢一点。'],
+      feed:   ['吃了。', '慢慢吃。', '嗯，谢谢。', '够了。'],
+      full:   ['吃不下了。', '先放着。'],
+      play:   ['……不太想动。', '你们玩。', '好吧。', '就一下。'],
+      hungry: ['该吃饭了。', '碗是空的。', '……饿。'],
+      bored:  ['……', '你在忙什么。', '过来坐一会儿。'],
+      poke:   ['……干嘛。', '在睡。', '嗯？'],
+      wake:   ['……几点了。', '醒了。'],
+      annoyed:['……吵。', '她一直这样。', '别理她。', '嗯。']
+    },
+    mochi: {
+      idle:   ['那是什么。', '我要上去看看。', '喵！', '门后面有东西。', '刚才那个声音是什么。', '有鸟。', '这个能吃吗。', '看我。', '你在干什么。', '我来了。', '让开。', '这里我的。', '为什么。', '再说一遍。', '我没碰。', '不是我弄的。', '那个盒子我要。', '外面有猫。', '我先看到的。', '喂。', '你听见没。', '给我开门。', '我上去了。', '下不来了。', '我又饿了。', '袋子响了。', '有虫。', '我抓到了。', '你看我。', '再看一眼。'],
+      meow:   ['喵。', '喵喵。', '喵——', '喵？', '喵喵喵。', '喵！喵！', '喵……喵。'],
+      morning:['起床。', '早饭呢。', '今天干什么。', '天亮了。', '起来起来。'],
+      evening:['你回来了？', '饭。', '今天有鸟。', '等你好久了。', '现在开饭。'],
+      late:   ['还不睡？', '再玩一会儿。', '我不困。', '陪我。'],
+      napIdle:['Naomi，起来。', '她又睡了。', '那我自己去。', 'Naomi。Naomi。', '她不理我。'],
+      pet:    ['再来。', '别摸尾巴。', '快一点。', '行了行了。', '哼。', '这边。', '不够。', '还要。'],
+      jealous:['我呢。', '为什么摸她。', '也摸我。', '我也在。', '喂。'],
+      feed:   ['我的。', '还有吗。', '先给我。', '好吃。', '就这些？', '再来一份。'],
+      full:   ['吃不下了。', '不吃，去玩。', '先放着，晚点吃。'],
+      play:   ['！', '抓到了。', '再来一次！', '差一点。', '快点！', '再来！', '还要玩。', '没完呢。'],
+      hungry: ['饿。', '饭！', '碗空了，快点。', '饿饿饿。', '喵！饭！', '我要饿死了。'],
+      bored:  ['无聊。', '没人陪我玩。', 'Naomi 不理我。', '喂。', '理我。', '看我一眼。'],
+      poke:   ['……明天再说。', '别。', '困。'],
+      wake:   ['好了好了。', '……嗯。']
+    }
+  };
+  const pick = a => a[Math.floor(Math.random() * a.length)];
+  const recent = [];
+  function pickFresh(pool) {
+    let t = pick(pool);
+    for (let i = 0; i < 8 && recent.indexOf(t) !== -1; i++) t = pick(pool);
+    recent.push(t); if (recent.length > 8) recent.shift();
+    return t;
+  }
+
+  /* ---------- state ---------- */
+  const KEY = 'cats:state';
+  const backend = (function () {
+    try { const t = '__probe__'; localStorage.setItem(t, '1'); localStorage.removeItem(t); return 'local'; } catch (e) { /* not allowed here */ }
+    if (window.storage && typeof window.storage.get === 'function') return 'claude';
+    return 'memory';
+  })();
+  let state = null;
+  let isNew = false;
+  const clamp = v => Math.max(0, Math.min(100, v));
+  function fresh() {
+    const now = Date.now();
+    return { born: now, lastSeen: now, full: 70, feeds: 0, plays: 0,
+      cats: { naomi: { mood: 70, pets: 0 }, mochi: { mood: 70, pets: 0 } } };
+  }
+  async function readState() {
+    if (backend === 'local') { const v = localStorage.getItem(KEY); return v ? JSON.parse(v) : null; }
+    if (backend === 'claude') {
+      try { const r = await window.storage.get(KEY, false); return (r && r.value) ? JSON.parse(r.value) : null; }
+      catch (e) { return null; }
+    }
+    return null;
+  }
+  async function writeState() {
+    const v = JSON.stringify(state);
+    if (backend === 'local') { localStorage.setItem(KEY, v); return true; }
+    if (backend === 'claude') { const r = await window.storage.set(KEY, v, false); return !!r; }
+    return false;
+  }
+  async function load() {
+    try { state = await readState(); } catch (e) { state = null; }
+    if (!state || !state.cats || typeof state.born !== 'number') { state = fresh(); isNew = true; }
+  }
+  let saveTimer = null, retried = false;
+  function save(now) {
+    state.lastSeen = Date.now();
+    if (backend === 'memory') return;
+    clearTimeout(saveTimer);
+    if (now) { doSave(); return; }
+    saveTimer = setTimeout(doSave, 250);
+  }
+  async function doSave() {
+    try {
+      const ok = await writeState();
+      if (ok) { if (noteIsError) note(''); retried = false; return; }
+      fail('没存上（没有返回值）');
+    } catch (e) {
+      fail('没存上：' + String(e && e.message ? e.message : e).slice(0, 40));
+    }
+  }
+  function fail(msg) {
+    note(msg, true);
+    if (!retried) { retried = true; setTimeout(doSave, 2000); }
+  }
+  async function wipe() {
+    try {
+      if (backend === 'local') localStorage.removeItem(KEY);
+      else if (backend === 'claude') await window.storage.delete(KEY, false);
+    } catch (e) { /* nothing there */ }
+  }
+
+  /* ---------- ui ---------- */
+  const $ = id => document.getElementById(id);
+  const scene = $('scene'), catsEl = $('cats'), noteEl = $('note');
+  const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let noteIsError = false;
+  function note(t, isError) { noteEl.textContent = t; noteIsError = !!isError && !!t; }
+
+  const CATS = {};
+  ['naomi', 'mochi'].forEach(id => {
+    const cv = $('cat-' + id);
+    CATS[id] = {
+      id, cv, ctx: cv.getContext('2d'),
+      stage: $('stage-' + id), bubble: $('bubble-' + id), zz: $('zz-' + id),
+      flip: id === 'naomi', S: 8, lastKey: '', bubbleTimer: null,
+      happyUntil: 0, awakeUntil: 0, blinkUntil: 0, nextBlink: 0, tail: 'a', nextTail: 0, nextIdle: 0
+    };
+  });
+
+  function layout() {
+    const w = scene.clientWidth || 380;
+    const S = Math.max(6, Math.min(10, Math.floor((w - 8) / (2 * W))));
+    const dpr = window.devicePixelRatio || 1;
+    Object.values(CATS).forEach(c => {
+      c.S = S;
+      c.cv.width = W * S * dpr; c.cv.height = H * S * dpr;
+      c.cv.style.width = (W * S) + 'px'; c.cv.style.height = (H * S) + 'px';
+      c.ctx.setTransform(1, 0, 0, 1, 0, 0);
+      c.ctx.scale(dpr, dpr);
+      c.lastKey = '';
+    });
+  }
+
+  function draw(c, ear, eye, tail) {
+    const key = ear + eye + tail;
+    if (key === c.lastKey) return;
+    c.lastKey = key;
+    const g = frame(SPRITES[c.id], ear, eye, tail);
+    const pal = PAL[c.id], S = c.S;
+    c.ctx.clearRect(0, 0, W * S, H * S);
+    for (let r = 0; r < H; r++) for (let col = 0; col < W; col++) {
+      const ch = g[r][col];
+      if (ch === '.') continue;
+      const x = c.flip ? (W - 1 - col) : col;
+      c.ctx.fillStyle = pal[ch] || '#000';
+      c.ctx.fillRect(x * S, r * S, S, S);
+    }
+  }
+
+  function say(c, text, ms) {
+    c.bubble.textContent = text;
+    c.bubble.hidden = false;
+    clearTimeout(c.bubbleTimer);
+    c.bubbleTimer = setTimeout(() => { c.bubble.hidden = true; }, ms || 2600);
+  }
+
+  function hearts(c, n) {
+    const S = c.S;
+    for (let i = 0; i < n; i++) {
+      const h = document.createElement('span');
+      h.className = 'heart';
+      h.textContent = '♥';
+      const bodyLeft = c.flip ? 4 * S : 0;
+      h.style.left = (bodyLeft + 3 * S + Math.random() * 11 * S) + 'px';
+      h.style.top = (2 * S + Math.random() * 3 * S) + 'px';
+      h.style.setProperty('--dx', (Math.random() * 28 - 14) + 'px');
+      h.style.animationDelay = (i * 90) + 'ms';
+      c.stage.appendChild(h);
+      h.addEventListener('animationend', () => h.remove());
+    }
+  }
+
+  function renderStats() {
+    $('barFull').style.width = state.full + '%';
+    $('valFull').textContent = Math.round(state.full);
+    $('barNaomi').style.width = state.cats.naomi.mood + '%';
+    $('valNaomi').textContent = Math.round(state.cats.naomi.mood);
+    $('barMochi').style.width = state.cats.mochi.mood + '%';
+    $('valMochi').textContent = Math.round(state.cats.mochi.mood);
+    const day = Math.floor((Date.now() - state.born) / 864e5) + 1;
+    $('days').textContent = '第 ' + day + ' 天';
+    $('since').textContent = 'Naomi 被摸过 ' + state.cats.naomi.pets + ' 次，Mochi 被摸过 ' + state.cats.mochi.pets + ' 次';
+  }
+
+  /* ---------- time ---------- */
+  function hour() { return new Date().getHours(); }
+  function nightNow() { const h = hour(); return h >= 23 || h < 7; }
+  function napNow(id) { const h = hour(); return id === 'naomi' && h >= 13 && h < 15; }
+  function sleepHour(id) { return nightNow() || napNow(id); }
+  function asleep(c) { return sleepHour(c.id) && Date.now() > c.awakeUntil; }
+  function skyClass() {
+    const h = hour();
+    if (h >= 23 || h < 6) return 'night';
+    if (h < 8) return 'dawn';
+    if (h < 17) return 'day';
+    if (h < 20) return 'evening';
+    return 'dusk';
+  }
+  function renderSky() {
+    const k = skyClass();
+    ['dawn', 'day', 'evening', 'dusk', 'night'].forEach(x => scene.classList.toggle(x, x === k));
+  }
+
+  /* ---------- behaviour ---------- */
+  let mochiStreak = 0;
+  function mochiPool(naomiAsleep) {
+    const L = LINES.mochi, h = hour();
+    let pool = L.idle.concat(L.meow, L.meow);
+    if (h >= 7 && h < 10) pool = pool.concat(L.morning, L.morning);
+    else if (h >= 17 && h < 21) pool = pool.concat(L.evening, L.evening);
+    else if (h >= 21) pool = pool.concat(L.late, L.late);
+    if (naomiAsleep) pool = pool.concat(L.napIdle, L.napIdle);
+    return pool;
+  }
+  function tick() {
+    const now = Date.now();
+    const naomiAsleep = asleep(CATS.naomi);
+    Object.values(CATS).forEach(c => {
+      const me = state.cats[c.id];
+      if (asleep(c)) {
+        c.zz.hidden = false;
+        draw(c, 'up', 'blink', 'b');
+        return;
+      }
+      c.zz.hidden = true;
+      if (now > c.nextBlink) { c.blinkUntil = now + 140; c.nextBlink = now + 2500 + Math.random() * 4000; }
+      if (now > c.nextTail) {
+        const lively = c.id === 'mochi' ? 0.7 : 0.35;
+        if (Math.random() < lively) c.tail = c.tail === 'a' ? 'b' : 'a';
+        c.nextTail = now + (c.id === 'mochi' ? 500 : 900) + Math.random() * 900;
+        if (reduced) { c.tail = 'a'; c.nextTail = now + 1e9; }
+      }
+      const low = state.full < 30 || me.mood < 30;
+      let eye = 'open';
+      if (now < c.happyUntil) eye = 'happy';
+      else if (now < c.blinkUntil) eye = 'blink';
+      else if (low) eye = 'sad';
+      const ear = (state.full < 25 || me.mood < 20) && now >= c.happyUntil ? 'down' : 'up';
+      draw(c, ear, eye, c.tail);
+
+      if (now > c.nextIdle && document.visibilityState === 'visible' && c.bubble.hidden) {
+        const L = LINES[c.id];
+        if (c.id === 'mochi') {
+          if (state.full < 30) say(c, pick(L.hungry), 2200);
+          else if (me.mood < 30) say(c, pick(L.bored), 2200);
+          else say(c, pickFresh(mochiPool(naomiAsleep)), 2200);
+          mochiStreak += 1;
+          c.nextIdle = now + (Math.random() < 0.5 ? 2600 : 4000 + Math.random() * 7000);
+          const n = CATS.naomi;
+          if (mochiStreak >= 3 && !asleep(n) && Math.random() < 0.4) {
+            mochiStreak = 0;
+            setTimeout(() => { if (n.bubble.hidden) say(n, pick(LINES.naomi.annoyed), 2400); }, 1500);
+          }
+        } else {
+          if (state.full < 30) say(c, pick(L.hungry));
+          else if (me.mood < 30) say(c, pick(L.bored));
+          else if (Math.random() < 0.6) say(c, pick(L.idle));
+          mochiStreak = 0;
+          c.nextIdle = now + 25000 + Math.random() * 25000;
+        }
+      }
+    });
+  }
+
+  function decay(hours) {
+    state.full = clamp(state.full - hours * 2.5);
+    state.cats.naomi.mood = clamp(state.cats.naomi.mood - hours * 1.2);
+    state.cats.mochi.mood = clamp(state.cats.mochi.mood - hours * 1.8);
+  }
+
+  function wake(c) {
+    const L = LINES[c.id];
+    c.awakeUntil = Date.now() + 20000;
+    say(c, pick(L.poke));
+  }
+
+  function petCat(c) {
+    const L = LINES[c.id];
+    if (asleep(c)) { wake(c); return; }
+    if (sleepHour(c.id)) c.awakeUntil = Date.now() + 20000;
+    const me = state.cats[c.id];
+    me.pets += 1;
+    me.mood = clamp(me.mood + (c.id === 'naomi' ? 8 : 5));
+    c.happyUntil = Date.now() + 1300;
+    hearts(c, 3);
+    say(c, pick(L.pet), 1800);
+    if (c.id === 'naomi' && !asleep(CATS.mochi) && Math.random() < 0.35) {
+      setTimeout(() => { if (CATS.mochi.bubble.hidden) say(CATS.mochi, pick(LINES.mochi.jealous), 1800); }, 700);
+    }
+    renderStats(); save();
+  }
+
+  function feed() {
+    const awake = Object.values(CATS).filter(c => !asleep(c));
+    if (!awake.length) { Object.values(CATS).forEach(wake); return; }
+    if (state.full >= 95) { awake.forEach(c => say(c, pick(LINES[c.id].full))); return; }
+    state.feeds += 1;
+    state.full = clamp(state.full + 30);
+    awake.forEach(c => {
+      state.cats[c.id].mood = clamp(state.cats[c.id].mood + 3);
+      c.happyUntil = Date.now() + 1500;
+      say(c, pick(LINES[c.id].feed));
+    });
+    renderStats(); save();
+  }
+
+  function play() {
+    const awake = Object.values(CATS).filter(c => !asleep(c));
+    if (!awake.length) { Object.values(CATS).forEach(wake); return; }
+    state.plays += 1;
+    state.full = clamp(state.full - 4);
+    awake.forEach(c => {
+      const me = state.cats[c.id];
+      const big = c.id === 'mochi';
+      me.mood = clamp(me.mood + (big ? 18 : 6));
+      c.happyUntil = Date.now() + 1800;
+      const cls = big ? 'jump' : 'hop';
+      c.stage.classList.remove('jump', 'hop');
+      void c.stage.offsetWidth;
+      c.stage.classList.add(cls);
+      say(c, pick(LINES[c.id].play));
+    });
+    renderStats(); save();
+  }
+
+  function greet(hours) {
+    if (hours < 0.05) return;
+    const d = new Date();
+    if (d.getMonth() === 6 && d.getDate() === 27) {
+      Object.values(CATS).forEach(c => { if (!asleep(c)) say(c, '今天是我们的生日。', 4000); });
+      return;
+    }
+    const c = !asleep(CATS.mochi) ? CATS.mochi : (!asleep(CATS.naomi) ? CATS.naomi : null);
+    if (!c) return;
+    let t;
+    if (hours < 1) t = c.id === 'mochi' ? '刚才去哪了。' : '回来了。';
+    else if (hours < 24) t = Math.round(hours) + ' 小时没见。';
+    else t = Math.round(hours / 24) + ' 天没见了。我们记得。';
+    setTimeout(() => say(c, t, 3400), 400);
+  }
+
+  /* ---------- reset ---------- */
+  const resetBtn = $('reset');
+  let armed = false, armTimer = null;
+  function disarm() { armed = false; resetBtn.textContent = '重新开始'; resetBtn.classList.remove('armed'); }
+  resetBtn.addEventListener('click', async () => {
+    if (!armed) {
+      armed = true;
+      resetBtn.textContent = '确定？再点一次就清零';
+      resetBtn.classList.add('armed');
+      armTimer = setTimeout(disarm, 4000);
+      return;
+    }
+    clearTimeout(armTimer); disarm();
+    await wipe();
+    state = fresh();
+    Object.values(CATS).forEach(c => { c.lastKey = ''; c.happyUntil = 0; });
+    renderStats(); save();
+    say(CATS.mochi, '……又来了。', 2600);
+  });
+
+  /* ---------- records ---------- */
+  const pad = n => String(n).padStart(2, '0');
+  function exportRecord() {
+    state.lastSeen = Date.now();
+    const rec = { app: 'naomi-mochi', version: 1, savedAt: new Date().toISOString(), state };
+    const d = new Date();
+    const name = 'naomi_mochi_' + d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()) + '.json';
+    const blob = new Blob([JSON.stringify(rec, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = name;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 3000);
+    note('已保存：' + name);
+    save();
+  }
+  function applyRecord(rec) {
+    const s = rec && rec.state ? rec.state : rec;
+    if (!s || !s.cats || !s.cats.naomi || !s.cats.mochi || typeof s.born !== 'number') { note('这不是记录文件。', false); return; }
+    const num = v => (Number.isFinite(v) ? v : 0);
+    state = {
+      born: s.born, lastSeen: num(s.lastSeen) || Date.now(),
+      full: clamp(num(s.full)), feeds: num(s.feeds) | 0, plays: num(s.plays) | 0,
+      cats: {
+        naomi: { mood: clamp(num(s.cats.naomi.mood)), pets: num(s.cats.naomi.pets) | 0 },
+        mochi: { mood: clamp(num(s.cats.mochi.mood)), pets: num(s.cats.mochi.pets) | 0 }
+      }
+    };
+    const away = (Date.now() - state.lastSeen) / 36e5;
+    if (away > 0) decay(away);
+    Object.values(CATS).forEach(c => { c.lastKey = ''; c.happyUntil = 0; });
+    renderStats(); save();
+    const d = new Date(rec && rec.savedAt ? rec.savedAt : state.lastSeen);
+    note('读取了 ' + (d.getMonth() + 1) + ' 月 ' + d.getDate() + ' 日的记录');
+    if (away >= 0.05) greet(away);
+    else { const c = !asleep(CATS.mochi) ? CATS.mochi : CATS.naomi; if (!asleep(c)) say(c, '又是你。', 2400); }
+  }
+  $('exportBtn').addEventListener('click', exportRecord);
+  $('importBtn').addEventListener('click', () => { const f = $('importFile'); f.value = ''; f.click(); });
+  $('importFile').addEventListener('change', e => {
+    const f = e.target.files && e.target.files[0];
+    if (!f) return;
+    const r = new FileReader();
+    r.onload = () => { try { applyRecord(JSON.parse(r.result)); } catch (err) { note('读不了这个文件。'); } };
+    r.onerror = () => note('读不了这个文件。');
+    r.readAsText(f);
+  });
+
+  /* ---------- wire up ---------- */
+  Object.values(CATS).forEach(c => {
+    c.cv.addEventListener('pointerdown', () => petCat(c));
+    c.cv.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); petCat(c); } });
+  });
+  $('feed').addEventListener('click', feed);
+  $('play').addEventListener('click', play);
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') { save(true); return; }
+    const h = (Date.now() - state.lastSeen) / 36e5;
+    if (h > 0.05) { decay(h); renderStats(); greet(h); }
+  });
+  window.addEventListener('pagehide', () => save(true));
+  let resizeTimer = null;
+  window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(layout, 120); });
+
+  (async function start() {
+    renderSky();
+    layout();
+    Object.values(CATS).forEach(c => draw(c, 'up', 'open', 'a'));
+    await load();
+    if (backend === 'memory') note('这里存不了，走之前点「保存记录」。', true);
+    if (isNew) {
+      setTimeout(() => { if (!asleep(CATS.mochi)) say(CATS.mochi, '你是谁。', 3000); }, 600);
+      setTimeout(() => { if (!asleep(CATS.naomi)) say(CATS.naomi, '……', 2400); }, 1800);
+    } else {
+      const away = (Date.now() - state.lastSeen) / 36e5;
+      decay(away);
+      greet(away);
+    }
+    renderStats();
+    save();
+    const now = Date.now();
+    CATS.naomi.nextBlink = now + 1500; CATS.mochi.nextBlink = now + 900;
+    CATS.naomi.nextTail = now + 1200;  CATS.mochi.nextTail = now + 600;
+    CATS.naomi.nextIdle = now + 16000; CATS.mochi.nextIdle = now + 4500;
+    setInterval(tick, 100);
+    setInterval(() => { decay(1 / 60); renderStats(); renderSky(); save(); }, 60000);
+  })();
+})();
+</script>
+</body>
+</html>
